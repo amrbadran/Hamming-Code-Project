@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="630.0" style="-fx-background-color: #222;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hammingcode.HelloController">
+   <children>
+      <Button layoutX="38.0" layoutY="594.0" mnemonicParsing="false" onAction="#SelectFile" prefHeight="26.0" prefWidth="117.0" text="Select File" textFill="#4e4b4a" />
+      <TextField fx:id="filePathtxtField" layoutX="175.0" layoutY="595.0" prefHeight="26.0" prefWidth="433.0" />
+      <Button layoutX="242.0" layoutY="642.0" mnemonicParsing="false" onAction="#LoadFile" prefHeight="26.0" prefWidth="146.0" text="Load Output File" textFill="#4e4b4a" />
+      <Text fill="WHITE" layoutX="166.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hamming Code">
+         <font>
+            <Font name="Copperplate Gothic Bold" size="36.0" />
+         </font>
+      </Text>
+      <Line endX="-99.99996948242188" endY="402.800048828125" layoutX="409.0" layoutY="154.0" startX="-99.99996948242188" startY="-72.4000015258789" stroke="WHITE" />
+      <Label layoutX="38.0" layoutY="132.0" text="Data :" textFill="WHITE">
+         <font>
+            <Font name="SansSerif Regular" size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="SendDatatxtField" layoutX="93.0" layoutY="129.0" prefHeight="26.0" prefWidth="208.0" />
+      <Label layoutX="38.0" layoutY="202.0" text="Parity:" textFill="WHITE">
+         <font>
+            <Font name="SansSerif Regular" size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="ParityTransmittxtField" layoutX="93.0" layoutY="199.0" prefHeight="26.0" prefWidth="208.0" />
+      <Label fx:id="TransmitDatatxtField" layoutX="3.0" layoutY="272.0" prefHeight="20.0" prefWidth="107.0" text="Transmitted:" textFill="WHITE">
+         <font>
+            <Font name="SansSerif Regular" size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="TransmittedtxtField" layoutX="93.0" layoutY="269.0" prefHeight="26.0" prefWidth="208.0" />
+      <Label layoutX="8.0" layoutY="342.0" text="ErrorData :" textFill="WHITE">
+         <font>
+            <Font name="SansSerif Regular" size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="ErrorDatatxtField" layoutX="93.0" layoutY="339.0" prefHeight="26.0" prefWidth="208.0" />
+      <RadioButton fx:id="radioBurst" layoutX="43.0" layoutY="425.0" mnemonicParsing="false" text="Add Burst Error" textFill="WHITE">
+         <toggleGroup>
+            <ToggleGroup fx:id="Burst_Single" />
+         </toggleGroup></RadioButton>
+      <RadioButton fx:id="radioSingle" layoutX="183.0" layoutY="425.0" mnemonicParsing="false" text="Add Single Error" textFill="WHITE" toggleGroup="$Burst_Single" />
+      <Button layoutX="116.0" layoutY="496.0" mnemonicParsing="false" onAction="#SendData" prefHeight="26.0" prefWidth="117.0" text="Send Data" textFill="#464545" />
+      <Label layoutX="328.0" layoutY="132.0" text="Recived :" textFill="WHITE">
+         <font>
+            <Font name="SansSerif Regular" size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="ReciviedDatatxtField" layoutX="403.0" layoutY="129.0" prefHeight="26.0" prefWidth="208.0" />
+      <Label layoutX="334.0" layoutY="202.0" prefHeight="20.0" prefWidth="57.0" text="Parity :" textFill="WHITE">
+         <font>
+            <Font name="SansSerif Regular" size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="RecivedParitytxtField" layoutX="403.0" layoutY="199.0" prefHeight="26.0" prefWidth="208.0" />
+      <Label layoutX="334.0" layoutY="272.0" prefHeight="20.0" prefWidth="57.0" text="Result:" textFill="WHITE">
+         <font>
+            <Font name="SansSerif Regular" size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="ResulttxtField" layoutX="403.0" layoutY="269.0" prefHeight="26.0" prefWidth="208.0" />
+      <Label layoutX="316.0" layoutY="342.0" prefHeight="20.0" prefWidth="85.0" text="TotalErrors:" textFill="WHITE">
+         <font>
+            <Font name="SansSerif Regular" size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="totalErrostxtField" layoutX="403.0" layoutY="339.0" prefHeight="26.0" prefWidth="208.0" />
+      <Label layoutX="312.0" layoutY="412.0" prefHeight="20.0" prefWidth="93.0" text="TotalCorrect" textFill="WHITE">
+         <font>
+            <Font name="SansSerif Regular" size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="totalCorrecttxtField" layoutX="403.0" layoutY="410.0" prefHeight="26.0" prefWidth="208.0" />
+      <Label layoutX="315.0" layoutY="482.0" prefHeight="20.0" prefWidth="93.0" text="Percentage:" textFill="WHITE">
+         <font>
+            <Font name="SansSerif Regular" size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="PercentagetxtField" layoutX="403.0" layoutY="479.0" prefHeight="26.0" prefWidth="208.0" />
+   </children>
+</AnchorPane>
